@@ -107,18 +107,23 @@ console.log(caja.clave);
 console.log('\n===10. CrearSuperMascota===');
 
 const volador = {
-    tipo: 'animal',
-    capacidad: 'volar',
+    volar() {
+        console.log('vuela');
+    }
 }
 
 const nadador = {
-    tipo: 'animal',
-    capacidad: 'nadar',
+    nadar() {
+        console.log('nada');
+    }
 }
 
 
 function crearSuperMascota(nombre) {
-    console.log(`el ${nombre} puede ${volador.capacidad} y ${nadador.capacidad}`);
+    return {nombre, ...volador, ...nadador};
 }
 
-crearSuperMascota('Gato Volador Nadador');
+const gatoVoladorNadadooooor = crearSuperMascota('El gato voladoooor');
+console.log(gatoVoladorNadadooooor.nombre);
+gatoVoladorNadadooooor.nadar();
+gatoVoladorNadadooooor.volar();
