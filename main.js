@@ -191,9 +191,8 @@ console.log(set15.has(4));
 console.log('\n=== 16 Set add ===');
 
 set15.add(5)
-const [...set15toarray] = set15
 
-console.log(set15toarray);
+console.log([...set15]);
 
 // 17 WeakSet 
 console.log('\n=== 17 WeakSet ===');
@@ -202,6 +201,8 @@ const weak17 = new WeakSet();
 
 weak17.add({nombre: 'a'});
 weak17.add({nombre: 'b'});
+
+
 
 // 18 Map
 console.log('\n=== 18 MAP ===');
@@ -244,7 +245,7 @@ const usuarios20 = {
 const weak20 = new WeakMap();
 
 weak20.set(usuarios20, 'abc123')
-console.log(weak20);
+console.log(weak20.has(usuarios20));
 
 // 21 Spread
 console.log('\n === 21 Spread ===');
