@@ -24,3 +24,5 @@
 
 ### 11. Crea un objeto animal con un metodo sonido() que muestre 'hace un sonido'. Luego cra un objetosgato con Object.create(animal) y anade un metodo maullar() que diga 'miau'.
 
+### 12. Usa Object.assign para combinar tres objetos (a,b,c) en uno solo.
+

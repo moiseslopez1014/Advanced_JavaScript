@@ -144,4 +144,14 @@ gato.maullar = () => {console.log('miau')};
 gato.sonido();
 gato.maullar();
 
-//12 
+//12 combi
+console.log('\n===12. Combinar objetos===');
+
+const primer12 = {a: 2};
+const secun12 = {b:33};
+const tercer12 = {c:456};
+
+const combi12 = Object.assign({}, primer12, secun12, tercer12);
+
+console.log(primer12, secun12, tercer12, combi12);
+
