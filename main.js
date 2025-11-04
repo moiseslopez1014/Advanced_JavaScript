@@ -155,3 +155,16 @@ const combi12 = Object.assign({}, primer12, secun12, tercer12);
 
 console.log(primer12, secun12, tercer12, combi12);
 
+
+// 13 Seal
+console.log('\n===13. SEAL===');
+
+const caja13 = {
+    peso: 11,
+    destino: 'cabra'
+}
+
+Object.seal(caja13);
+
+caja13.destino = 'arcos';
+caja13.tamano = 30;

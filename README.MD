@@ -26,3 +26,4 @@
 
 ### 12. Usa Object.assign para combinar tres objetos (a,b,c) en uno solo.
 
+### 13. Crea un objeto caja con dos propiedades, sellalo con Object.seal() e intenta anadir una propiedad. que ocurre?
