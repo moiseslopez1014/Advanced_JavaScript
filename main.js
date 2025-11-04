@@ -168,3 +168,11 @@ Object.seal(caja13);
 
 caja13.destino = 'arcos';
 caja13.tamano = 30;
+
+console.log(caja13); // la clave tamano no se puede agregar, aunque si se pudo combiar el valor de destino.
+
+// 14 Has Own Property
+console.log('\n===14. HasOwnProperty===');
+
+console.log(gato.hasOwnProperty('maullar'));
+console.log(gato.hasOwnProperty('sonido'));
