@@ -127,3 +127,21 @@ const gatoVoladorNadadooooor = crearSuperMascota('El gato voladoooor');
 console.log(gatoVoladorNadadooooor.nombre);
 gatoVoladorNadadooooor.nadar();
 gatoVoladorNadadooooor.volar();
+
+
+// 11. gato maullar
+console.log('\n===11. Gato.maullar===');
+
+const animal = {
+    sonido() {
+        console.log('hace un sonido');
+    }
+}
+
+const gato = Object.create(animal);
+gato.maullar = () => {console.log('miau')};
+
+gato.sonido();
+gato.maullar();
+
+//12 
