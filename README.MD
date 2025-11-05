@@ -52,3 +52,23 @@
  
 #### 25 . Crea un `Map` y recórrelo con un bucle `for...of` mostrando cada `clave` y `valor`.
  
+## GARBAGE COLLECTOR
+ 
+#### 26 . Crea un `setInterval` que aumente un contador y lo detenga automáticamente al llegar a 5.
+ 
+#### 27 . Crea un `setTimeout` que muestre un mensaje tras 3 segundos, y luego cancélalo antes de que se ejecute.
+ 
+#### 28 . Crea una función que simule añadir y eliminar un listener (usa `addEventListener` y `removeEventListener` con un click).
+ 
+## MANEJO DE ERRORES
+ 
+#### 29 . Usa `try/catch` para capturar el error de convertir a número un texto no numérico.
+ 
+#### 30 . Crea una clase `ProductoError` que extienda de Error y una función `validarPrecio(precio)` que lance esa clase de error si el precio es menor que 0. Tip: En el constructor(msg) tendrás que incorporar super(msg).
+ 
+#### 31 . Haz una función `abrirArchivo(nombre)` que lance un error si el nombre está vacío.
+ 
+#### 32 . Crea un `try/catch` con `finally` que siempre muestre "Proceso finalizado".
+ 
+#### 33 . Lanza un error genérico con `throw new Error("Algo salió mal")` y captúralo para mostrar su nombre y mensaje.
+ 

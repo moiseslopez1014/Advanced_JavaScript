@@ -167,7 +167,7 @@ const caja13 = {
 Object.seal(caja13);
 
 caja13.destino = 'arcos';
-caja13.tamano = 30;
+//caja13.tamano = 30;
 
 console.log(caja13); // la clave tamano no se puede agregar, aunque si se pudo combiar el valor de destino.
 
@@ -293,6 +293,136 @@ map25.set('clave3', 'valor3')
 map25.set('clave4', 'valor4')
 map25.set('clave5', 'valor5')
 
-for ([k,v] of map25) {
-    console.log(k,v);
+//for ([k,v] of map25) {
+//    console.log(k,v);
+//}
+
+
+// 26 clearInterval
+console.log('\n=== 26 CLEAR INTERVAL ===');
+
+let contador26 = setInterval(intervalillo, 2000);
+
+let contando26 = 1;
+
+function intervalillo() {
+    if (contando26 === 5) {
+        clearInterval(contador26);
+        return contando26 = null;
+    }
+
+    console.log(contando26);
+    return contando26++;
+
+}
+
+// 27 Timeout
+console.log('\n === 27 TIMEOUT ===');
+
+let contador27 = setTimeout(() => console.log('Hola'), 2000);
+
+clearTimeout(contador27);
+
+//28 EventListener
+console.log('\n=== 28 EventListener ===');
+
+const anchorElement = document.querySelector('#app');
+const botonDOM = document.querySelector('#botoncito');
+
+botonDOM.textContent = 'EventListener';
+
+botonDOM.addEventListener('click', funcionNumeroRandom);
+
+function removeListener() {
+    botonDOM.removeEventListener('click', funcionNumeroRandom);
+}
+
+function funcionNumeroRandom() {
+    console.log(Math.random());
+    removeListener();
+}
+
+// 29 Manejo de errores
+console.log('\n === 29 TRY/CATCH ===');
+
+try {
+    let conversion29 = 'Mensaje';
+    if (isNaN(conversion29)) {
+        throw new Error('Un error de NaN');
+    }
+    console.log(parseInt(conversion29, 10));
+} catch (error) {
+    console.log(error);
+}
+
+// 30 Nueva Clase ERROR
+console.log('\n=== 30 Nueva clase Error ===');
+
+class ProductoError extends Error {
+    constructor(msg) {
+        super(msg);
+    };
+}
+
+let preciototal = -2.99;
+
+function validarPrecio(precio) {
+    if (precio < 0) throw new ProductoError('El precio no puede ser inferior a cero');
+    console.log('Precio total: ', precio + 39);
+}
+try {
+    validarPrecio(preciototal);
+} catch (error) {
+    console.log(error);
+}
+
+// 31 Error vacio
+console.log('\n=== 31 Error cuando hay campo vacio ===');
+
+
+class ArchivoError extends Error {
+    constructor(msg) {
+        super(msg);
+    };
+}
+
+function abrirArchivo(nombre) {
+    if (!nombre || nombre === '') throw new ArchivoError('El nombre del archivo no puede estar vacio');
+    console.log(`Abriendo archivo${nombre}`);
+}
+
+try {
+    abrirArchivo('Error.log');
+} catch (error) {
+    console.log(error);
+}
+
+// 32 finally
+console.log('\n=== 32 Finally ===');
+
+function ejercicio32Finally (num) {
+    try {
+        if (num > 100) {
+            throw new Error('El porcentaje sobrepaso el maximo');
+        }
+        console.log(num * 0.45);
+    }
+    catch (error) {
+        console.log(error);
+    }
+    finally {
+        console.log('La comprobacion a terminado');
+    }
+}
+
+ejercicio32Finally(87);
+
+// 33 generico
+console.log('\n=== 33 Error Generico ===');
+
+try {
+    throw new Error('Algo salio mal');
+} catch (error) {
+    console.log(error.name);
+    console.log(error.message);
 }
