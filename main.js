@@ -1,3 +1,4 @@
+/*
 // 1. funcion descuento
 console.log('===1. funcion descuento===');
 
@@ -149,7 +150,7 @@ console.log('\n===12. Combinar objetos===');
 
 const primer12 = {a: 2};
 const secun12 = {b:33};
-const tercer12 = {c:456};
+const tercer12 = {c:396};
 
 const combi12 = Object.assign({}, primer12, secun12, tercer12);
 
@@ -261,7 +262,7 @@ console.log(arr21uno,arr21dos,arr21tre,arrSpreaded);
 // 22 Rest
 console.log('\n=== 22 REST ===');
 
-const arr22unido = [10,20,30,40,50];
+const arr22unido = [10,20,30,40,44];
 
 const [primero22, segundo22, ...resto22] = arr22unido;
 
@@ -405,7 +406,7 @@ function ejercicio32Finally (num) {
         if (num > 100) {
             throw new Error('El porcentaje sobrepaso el maximo');
         }
-        console.log(num * 0.45);
+        console.log(num * 0.39);
     }
     catch (error) {
         console.log(error);
@@ -425,4 +426,212 @@ try {
 } catch (error) {
     console.log(error.name);
     console.log(error.message);
+}
+// 34 Callback
+console.log('\n=== 34 CallBack BRUJERIA ===');
+
+function cargarAlgo(callback) { //2. recibe funcion como parametro
+    setTimeout(() =>  callback('Leido correctamente'), 100); //3. inicia funcion como resultado de carga 34 , con mensaje como argumento
+}
+
+const carga34 = (parametro) => console.log(parametro);// 4. inicia la funcion que  que va a recibir el mensaje como parametro, para meterselo al console log.
+cargarAlgo(carga34); //1. inicia con funcion de argumento
+
+// 35 Promesas
+
+function taimAut(ms) {
+    return new Promise((res) => setTimeout(res, ms));
+}
+
+async function promesilla() {
+    await taimAut(144);
+    console.log('Promesa lista');
+}
+
+promesilla();
+
+// 36 promesa fallo
+console.log('\n=== 36 promesa fallo ===');
+const rompepromesas = new Promise((res, rej) => {
+    const success = false;
+    if (success) {
+        res('todo bien');
+    }
+    else {
+        rej('Todo mal!');
+    }
+})
+
+rompepromesas.then((resultado) => console.log(resultado)).catch((rechazo) => console.log(rechazo));
+
+// 37 promesa con try catch
+
+const promesasAreNotTrue = new Promise((res, rej) => {
+    const success = true;
+    if (success) {
+        setTimeout(() => res('terminado'), 200);
+    }
+    else {
+        rej('no terminao');
+    }
+})
+
+async function getPromiseResponse() {
+    try {
+        const response = await promesasAreNotTrue;
+        if(response !== 'terminao') throw new Error('Promesa fallia, como no')
+            console.log('respuesta asincrona: ', response);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+getPromiseResponse();
+*/
+
+
+// 38 Stringify
+console.log('\n === 38 stringify ===');
+
+const persona38 = {
+    nombre: 'Juan',
+    edad: 41,
+    ciudad: 'La Isla de Leon',
+};
+
+console.log(JSON.stringify(persona38));
+
+// 39 Parse
+console.log('\n === 39 Parse ===');
+
+const persona39 = '{"nombre":"Ana","edad":25,"ciudad":"Madrid"}';
+const persona39parseada = JSON.parse(persona39);
+console.log(persona39parseada.nombre);
+
+// 40 array Objetos
+console.log('\n=== 40 array objetos ===');
+
+const alumnos40 = [
+{nombre: 'Jaimito',
+    nota: 7.2
+},
+{nombre: 'Josefina',
+    nota: 8
+},
+{nombre: 'Papadopoulos',
+    nota: 4.95
+}]
+
+console.log(alumnos40);
+
+const alumnos40jsoneado = JSON.stringify(alumnos40);
+console.log(alumnos40jsoneado);
+
+const alumnos40reparseado = JSON.parse(alumnos40jsoneado);
+console.log(alumnos40reparseado);
+
+for (const elemento of alumnos40reparseado) {
+    console.log(elemento.nombre);
+}
+
+// 41 de verdad objeto con funcion
+console.log('\n === 41 de verdad ===');
+
+const persona41 = {
+    nombre: 'Juan',
+    edad: 41,
+    ciudad: 'La Isla de Leon',
+    saludar() {
+        console.log('Hola', this.nombre);
+    }
+};
+
+
+const persona41string = JSON.stringify(persona41);
+console.log(persona41string);
+
+const persona41stringparse = JSON.parse(persona41string);
+console.log(persona41stringparse);
+
+// 41 nullish
+console.log('\n === 41 nullish ===');
+
+let puntos;
+
+console.log(puntos ?? 0);
+
+// 42 con cero
+console.log('\n === 42 con cero ===');
+
+let valor = 0;
+
+console.log(valor ?? 10);
+
+// 43 aplicando por valor por defecto
+console.log('\n=== 43 aplicando un valor por defecto ===');
+
+let nombreUsuario = null;
+console.log(nombreUsuario ?? 'Invitado');
+
+// 44 nullish para funcion
+console.log('\n=== 44 nullish para funcion ===');
+
+function obtenerDescuento(precio) {
+    let descuento = (precio ?? 0) * 0.1;
+    console.log(descuento);
+}
+
+obtenerDescuento();
+
+// 45 optional chaining
+console.log('\n === Optional chaining ===');
+
+const libro = { titulo: "1984", autor: { nombre: "Orwell" } }
+
+console.log(libro?.autor?.nombre);
+console.log(libro?.editorial?.nombre ?? 'Sin editorial');
+
+// 46 con objeto vacio
+console.log('\n === 46 con objeto vacio ===');
+
+const obj46vacio = {};
+
+console.log(obj46vacio?.datos?.valor); //se puede quitar el ? de objvacio porque si existe, pero da error al quitarlo de datos.
+
+// 47 con valores null
+console.log('\n=== 46 con valores null ===');
+
+const usuario47 = null;
+
+console.log(usuario47?.nombre ?? 'Usuario no registrado');
+
+// 48 mostrar alternativa cuando no haya dato
+console.log('\n === 48 mostrar alternativa cuando no haya dato ===');
+
+const clientes48 = [
+    {
+        nombre: 'Pepe',
+        direccion: {
+            ciudad: 'Sevilla'
+        }
+    },
+    {
+        nombre: 'Pepa',
+        direccion: {
+            
+        }
+    },
+    {
+        nombre: 'Dick',
+        direccion: {
+            ciudad: 'Lelystad'
+        }
+    },
+    {
+        nombre: 'Humphrey'
+    },
+];
+
+for (const element of clientes48) {
+    console.log(`Nombre: ${element.nombre} | Ciudad: ${element.direccion?.ciudad ?? 'Sin ciudad'}`);
 }

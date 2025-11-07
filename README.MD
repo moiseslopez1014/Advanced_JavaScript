@@ -72,3 +72,34 @@
  
 #### 33 . Lanza un error genérico con `throw new Error("Algo salió mal")` y captúralo para mostrar su nombre y mensaje.
  
+
+
+
+#### 44 . Crea un objeto llamado `persona` con las propiedades: `nombre, edad, y ciudad`. Convierte el objeto a una `cadena JSON` y muéstralo por consola.
+ 
+#### 45 . Toma la cadena JSON `{"nombre":"Ana","edad":25,"ciudad":"Madrid"}` y conviértela de nuevo a un objeto. Muestra el valor de nombre por consola.
+ 
+#### 46 . Crea un array de objetos `alumnos` con tres elementos, cada uno con propiedades `nombre y nota`. Convierte el array `a JSON` y muéstralo. Luego, conviértelo de nuevo `a un array` y recorre los nombres de los alumnos con un `for`.
+ 
+#### 47 . Prueba a `convertir a JSON` un `objeto` que contenga una `función`. Observa qué ocurre con la función en la conversión.
+ 
+## NULLISH COALESCING (??)
+ 
+#### 47 . Declara una variable `puntos` sin valor `(undefined)`. `Usa puntos ?? 0` para mostrar un valor por defecto en consola.
+ 
+#### 47 . Declara `let valor = 0`. Imprime el resultado de `valor ?? 10` y explica por qué no se reemplaza por 10.
+ 
+#### 47 . Declara `let nombreUsuario = null`. Usa `nombreUsuario ?? "Invitado"` para mostrar un nombre por defecto.
+ 
+#### 47 . Crea una función `obtenerDescuento(precio)` que devuelva precio \* 0.1, pero si precio es null o undefined, devuelva 0.
+ 
+
+ ## OPTIONAL CHAINING
+ 
+#### 46 . Crea un objeto `libro = { titulo: "1984", autor: { nombre: "Orwell" } }`. Muestra en consola: `libro?.autor?.nombre` y `libro?.editorial?.nombre ?? "Sin editorial"`
+ 
+#### 47 . Declara un objeto vacío {} y prueba a acceder a `obj?.datos?.valor` sin que dé error. Intenta acceder si el ? para ver que pasa.
+ 
+#### 48 . Crea una variable `usuario` con el valor `null`. Usa `usuario?.nombre ?? "Usuario no registrado"` para mostrar un texto alternativo.
+ 
+#### 49 . Crea una lista clientes con varios objetos que tengan estructura similar a: `{ nombre: 'Pepe', direccion: { ciudad: 'Sevilla' } }`. Usa `?.` para acceder de forma segura a la ciudad de cada cliente, mostrando `"sin ciudad"` si no existe.
